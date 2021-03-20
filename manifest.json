@@ -1,0 +1,17 @@
+{
+  "name": "Test extension 1",
+  "version": "1.0.0.0",
+  "description": "Test extension modifying page content",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*",
+        "file:///*/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "manifest_version": 2
+}
