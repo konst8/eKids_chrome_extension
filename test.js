@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  let allElements = document.querySelectorAll('*');
+  let headings = document.querySelectorAll('h3');
   let heading2 = document.createElement('h2');
+
   heading2.innerHTML = 'Hello Planet!!!';
   
   heading2.style.cursor = 'pointer';
@@ -8,8 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   heading2.addEventListener(
     'click',
     (event) => {
-      console.log('event info', event);
-      let allElements = document.querySelectorAll('*');
       allElements.forEach(
         element => {
           element.style.backgroundColor = 'orange';
@@ -19,5 +20,22 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   
   document.querySelector('h1').after(heading2);
+
+  // Change background color of all elements on
+  // clicking h3 heading.
+
+  headings.forEach(heading => {
+    heading.addEventListener(
+      'click',
+      event => {
+        let color = event.target.style.color;
+        allElements.forEach(
+          element => {
+            element.style.backgroundColor = color;
+          }
+        );
+      }
+    )
+  });
 
 });
