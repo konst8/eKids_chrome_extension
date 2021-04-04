@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  
+
   let addHeading = (color) => {
     let allElements = document.querySelectorAll('*');
     let h3 = document.createElement('h3');
@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   addHeading('orange');
-  addHeading('red');
+  addHeading('red');  
+  addHeading('blue');  
+  addHeading('green');  
 
 });
 
