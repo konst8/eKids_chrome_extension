@@ -2,6 +2,21 @@ document.addEventListener(
   'DOMContentLoaded',
   () => {
 
+    let sendColor = (color) => {
+      chrome.tabs.query(
+        {
+          active: true,
+          currentWindow: true
+        },
+        (tabs) => {
+          chrome.tabs.sendMessage(
+            tabs[0].id, 
+            {color},
+          );
+        }
+      );
+    };
+
     let addHeading = (color) => {
       let allElements = document.querySelectorAll('*');
       let h3 = document.createElement('h3');
@@ -12,11 +27,7 @@ document.addEventListener(
         'click',
         event => {
           let color = event.target.style.color;
-          allElements.forEach(
-            element => {
-              element.style.backgroundColor = color;
-            }
-          );
+          sendColor(color);
         }
       );
       document.body.prepend(h3);
@@ -29,19 +40,3 @@ document.addEventListener(
 
   }
 );
-
-
-    // let sendColor = (color) => {
-    //   chrome.tabs.query(
-    //     {
-    //       active: true,
-    //       currentWindow: true
-    //     },
-    //     (tabs) => {
-    //       chrome.tabs.sendMessage(
-    //         tabs[0].id, 
-    //         {color},
-    //       );
-    //     }
-    //   );
-    // };
