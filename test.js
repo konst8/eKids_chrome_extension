@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let heading2 = document.createElement('h2');
 
   heading2.innerHTML = 'Hello Planet!!!';
-  
   heading2.style.cursor = 'pointer';
   
   heading2.addEventListener(
