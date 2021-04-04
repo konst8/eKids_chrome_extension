@@ -1,24 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
+  
+  let addHeading = (color) => {
+    let allElements = document.querySelectorAll('*');
+    let h3 = document.createElement('h3');
+    h3.innerHTML = color;
+    h3.style.color = color;
+    h3.style.cursor = 'pointer';
+    h3.addEventListener(
+      'click',
+      event => {
+        let color = event.target.style.color;
+        allElements.forEach(
+          element => {
+            element.style.backgroundColor = color;
+          }
+        );
+      }
+    );
+    document.body.append(h3);
+  };
 
-  let allElements = document.querySelectorAll('*');
-  let h3 = document.createElement('h3');
-  h3.innerHTML = 'blue';
-  h3.style.color = 'blue';
-  h3.style.cursor = 'pointer';
-  h3.addEventListener(
-    'click',
-    event => {
-      let color = event.target.style.color;
-      allElements.forEach(
-        element => {
-          element.style.backgroundColor = 'blue';
-        }
-      );
-    }
-  );
-  document.body.append(h3);
+  addHeading('orange');
+  addHeading('red');
 
-
+});
 
 
 
@@ -59,5 +64,3 @@ document.addEventListener('DOMContentLoaded', () => {
   //     }
   //   )
   // });
-
-});
