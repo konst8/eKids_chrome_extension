@@ -2,22 +2,8 @@ document.addEventListener(
   'DOMContentLoaded',
   () => {
 
-    let sendColor = (color) => {
-      chrome.tabs.query(
-        {
-          active: true,
-          currentWindow: true
-        },
-        (tabs) => {
-          chrome.tabs.sendMessage(
-            tabs[0].id, 
-            {color},
-          );
-        }
-      );
-    };
-
-    let createHeading = (color) => {
+    let addHeading = (color) => {
+      let allElements = document.querySelectorAll('*');
       let h3 = document.createElement('h3');
       h3.innerHTML = color;
       h3.style.color = color;
@@ -26,21 +12,36 @@ document.addEventListener(
         'click',
         event => {
           let color = event.target.style.color;
-          sendColor(color);
+          allElements.forEach(
+            element => {
+              element.style.backgroundColor = color;
+            }
+          );
         }
       );
-      return h3;
+      document.body.prepend(h3);
     };
-
-    let h3green = createHeading('green');
-    let h3orange = createHeading('orange');
-    let h3blue = createHeading('blue');
-    let h3red = createHeading('red');
     
-    document.body.prepend(h3green);
-    document.body.prepend(h3orange);
-    document.body.prepend(h3blue);
-    document.body.prepend(h3red);
+    addHeading('orange');
+    addHeading('red');  
+    addHeading('blue');  
+    addHeading('green'); 
 
   }
 );
+
+
+    // let sendColor = (color) => {
+    //   chrome.tabs.query(
+    //     {
+    //       active: true,
+    //       currentWindow: true
+    //     },
+    //     (tabs) => {
+    //       chrome.tabs.sendMessage(
+    //         tabs[0].id, 
+    //         {color},
+    //       );
+    //     }
+    //   );
+    // };
