@@ -33,10 +33,41 @@ document.addEventListener(
       document.body.prepend(h3);
     };
     
-    addHeading('orange');
-    addHeading('red');  
-    addHeading('blue');  
-    addHeading('green'); 
+    // addHeading('orange');
+    // addHeading('red');  
+    // addHeading('blue');  
+    // addHeading('green');
+
+    let colors = [
+      'orange',
+      'red',
+      'blue',
+      'green'
+    ];
+
+    let addHeadings = (colors) => {
+      colors.forEach(
+        color => {
+          addHeading(color);
+        }
+      )
+    }
+
+    addHeadings(colors);
+
+    let addDelayedColorsButton = () => {
+      let button = document.createElement('button');
+      button.innerHTML = 'Colorize All with Delay';
+      document.body.append(button);
+
+      // Home Work
+
+      // on button click
+      // send list of colors to content.js
+      // sendColors()
+
+    };
+    addDelayedColorsButton();
 
   }
 );

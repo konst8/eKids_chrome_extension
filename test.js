@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
     'green',
   ];
 
-  colors.forEach(
-    (color) => {
-      addHeading(color);
-    }
-  );
+  // colors.forEach(
+  //   (color) => {
+  //     addHeading(color);
+  //   }
+  // );
 
   let setBgColorWithDelay = () => {
     colors.forEach(
@@ -45,12 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
           () => {
             document.body.style.backgroundColor = color;
           },
-          3000 * index
+          3000 * (index + 1)
         );
       }
     );
   };
-  setBgColorWithDelay();
+  // setBgColorWithDelay();
 
   // Set timeout
 
