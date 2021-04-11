@@ -1,11 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  let allElements = document.querySelectorAll('*');
-
-  // Change background color of all elements on
-  // clicking h3 heading.
-  
-  let createHeading = (color) => {
+  let addHeading = (color) => {
+    let allElements = document.querySelectorAll('*');
     let h3 = document.createElement('h3');
     h3.innerHTML = color;
     h3.style.color = color;
@@ -21,17 +17,42 @@ document.addEventListener('DOMContentLoaded', () => {
         );
       }
     );
-    return h3;
+    document.body.append(h3);
   };
 
-  let h3green = createHeading('green');
-  let h3orange = createHeading('orange');
-  let h3blue = createHeading('blue');
-  let h3red = createHeading('red');
+  addHeading('orange');
+  addHeading('red');  
+  addHeading('blue');  
+  addHeading('green');
 
-  document.body.prepend(h3green);
-  document.body.prepend(h3orange);
-  document.body.prepend(h3blue);
-  document.body.prepend(h3red);
+  let colors = [
+    'red',
+    'blue',
+    'green',
+    'orange',
+  ];
+
+  let colorizeAllWithDelay = () => {
+    colors.forEach(
+      (color, index) => {
+        setTimeout(
+          () => {
+            document.body.style.backgroundColor = color;
+          },
+          2000 * (index + 1)
+        );
+      }
+    );
+  };
+
+  let addColorAllButton = () => {
+    let button = document.createElement('button');
+    button.innerHTML = 'All colors with delay';
+    button.addEventListener('click', colorizeAllWithDelay);
+    document.body.append(button);
+  };
+
+  addColorAllButton();
 
 });
+
