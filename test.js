@@ -38,6 +38,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   );
 
+  let setBgColorWithDelay = () => {
+    colors.forEach(
+      (color, index) => {
+        setTimeout(
+          () => {
+            document.body.style.backgroundColor = color;
+          },
+          3000 * index
+        );
+      }
+    );
+  };
+  setBgColorWithDelay();
+
   // Set timeout
 
   let myFunc = () => {
