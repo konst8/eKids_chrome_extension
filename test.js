@@ -38,4 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   );
 
+  // Set timeout
+  let myFunc = () => {
+    console.log('zzz');
+  }
+
+
+  setTimeout(
+    myFunc, // function to call
+    2000, // delay in miliseconds
+  );
+
 });
