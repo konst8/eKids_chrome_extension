@@ -39,14 +39,29 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   // Set timeout
+
   let myFunc = () => {
     console.log('zzz');
   }
-
 
   setTimeout(
     myFunc, // function to call
     2000, // delay in miliseconds
   );
+
+  // Clear (delete) existing timer by id
+
+  // clearTimeout(
+  //   4
+  // );
+
+  // Set Interval
+
+  let myInterval = setInterval(
+    myFunc, // function to call
+    2000 // delay in milliseconds
+  )
+
+  clearInterval(myInterval);
 
 });
