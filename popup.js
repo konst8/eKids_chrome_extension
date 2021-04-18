@@ -18,7 +18,6 @@ document.addEventListener(
     };
 
     let addHeading = (color) => {
-      let allElements = document.querySelectorAll('*');
       let h3 = document.createElement('h3');
       h3.innerHTML = color;
       h3.style.color = color;
@@ -48,7 +47,7 @@ document.addEventListener(
       )
     }
 
-    let addDelayedColorsButton = () => {
+    let addDelayedColorsButton = (colors, delay = 1000) => {
       let button = document.createElement('button');
       button.innerHTML = 'Colorize All with Delay';
       document.body.append(button);
@@ -61,7 +60,7 @@ document.addEventListener(
                 () => {
                   sendColor(color);
                 },
-                2000 * index
+                delay * index
               );
             }
           );
@@ -70,7 +69,7 @@ document.addEventListener(
     };
 
     addHeadings(colors);
-    addDelayedColorsButton();
+    addDelayedColorsButton(colors, 2000);
 
   }
 );
