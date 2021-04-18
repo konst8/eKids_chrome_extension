@@ -17,8 +17,20 @@ document.addEventListener(
       );
     };
 
+    let sendColorsWithDelay = (colors, delay = 2000) => {
+      colors.forEach(
+        (color, index) => {
+          setTimeout(
+            () => {
+              sendColor(color);
+            },
+            delay * index
+          );
+        }
+      );
+    };
+
     let addHeading = (color) => {
-      let allElements = document.querySelectorAll('*');
       let h3 = document.createElement('h3');
       h3.innerHTML = color;
       h3.style.color = color;
@@ -32,11 +44,6 @@ document.addEventListener(
       );
       document.body.prepend(h3);
     };
-    
-    // addHeading('orange');
-    // addHeading('red');  
-    // addHeading('blue');  
-    // addHeading('green');
 
     let colors = [
       'orange',
@@ -60,11 +67,12 @@ document.addEventListener(
       button.innerHTML = 'Colorize All with Delay';
       document.body.append(button);
 
-      // Home Work
-
-      // on button click
-      // send list of colors to content.js
-      // sendColors()
+      button.addEventListener(
+        'click',
+        () => {
+          sendColorsWithDelay(colors);
+        }
+      );
 
     };
     addDelayedColorsButton();
