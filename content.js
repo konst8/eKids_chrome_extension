@@ -9,11 +9,7 @@ let setPageColor = (color) => {
 
 chrome.runtime.onMessage.addListener(
   (message) => {
+    console.log('message', message);
     setPageColor(message.color);
-
-    // Home Work
-
-    // Colorize the page with TimeOut (use all 4 colors)
-
   } 
 );
