@@ -49,6 +49,7 @@ document.addEventListener(
 
     let addDelayedColorsButton = (colors, delay = 1000) => {
       let button = document.createElement('button');
+      button.classList.add('btn');
       button.innerHTML = 'Colorize All with Delay';
       document.body.append(button);
       button.addEventListener(
