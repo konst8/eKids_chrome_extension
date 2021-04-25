@@ -2,6 +2,9 @@
   "name": "Test extension 1",
   "version": "1.0.0.0",
   "description": "Test extension modifying page content",
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
       "matches": [

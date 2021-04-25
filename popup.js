@@ -1,6 +1,18 @@
+let storage = chrome.storage.local;
+
 document.addEventListener(
   'DOMContentLoaded',
   () => {
+
+    storage.clear();
+    console.log('storage', storage);
+
+    storage.get(
+      null,
+      (items) => {
+        console.log('storageItems', items);
+      }
+    );
 
     let sendColor = (color) => {
       chrome.tabs.query(
