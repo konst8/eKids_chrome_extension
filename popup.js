@@ -4,13 +4,11 @@ document.addEventListener(
   'DOMContentLoaded',
   () => {
 
-    storage.clear();
-    console.log('storage', storage);
+    // Save color in storage
 
-    storage.get(
-      null,
-      (items) => {
-        console.log('storageItems', items);
+    storage.set(
+      {
+        color: 'green',
       }
     );
 
