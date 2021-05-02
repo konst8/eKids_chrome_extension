@@ -27,8 +27,8 @@ storage.get(
   null,
   (items) => {
     console.log('storageItems', items);
-    if (typeof items.color === 'string') {
-      setPageColor(items.color);
+    if (typeof items[host] !== 'undefined') {
+      setPageColor(items[host]);
     }
   }
 );
