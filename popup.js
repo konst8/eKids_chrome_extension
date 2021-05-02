@@ -1,17 +1,6 @@
-let storage = chrome.storage.local;
-
 document.addEventListener(
   'DOMContentLoaded',
   () => {
-
-    // Save color in storage
-
-    // storage.set(
-    //   {
-    //     color: 'green',
-    //   }
-    // );
-
     let sendColor = (color) => {
       chrome.tabs.query(
         {
@@ -37,11 +26,6 @@ document.addEventListener(
         event => {
           let color = event.target.style.color;
           sendColor(color);
-          storage.set(
-            {
-              color,
-            }
-          );
         }
       );
       document.body.prepend(h3);
