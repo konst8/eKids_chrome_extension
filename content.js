@@ -4,9 +4,8 @@ let host = window.location.hostname;
 
 let setPageColor = (color) => {
   let styleTag = document.createElement('style');
-  styleTag.classList.add('ekids-chrome-ext');
   styleTag.innerHTML = `
-    body { 
+    body {
       background: ${color} !important;
     }
     body * {

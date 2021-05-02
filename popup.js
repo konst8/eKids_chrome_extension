@@ -32,6 +32,7 @@ document.addEventListener(
     };
   
     let colors = [
+      '#80808059',
       'orange',
       'red',
       'blue',
