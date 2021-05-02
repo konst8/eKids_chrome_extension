@@ -3,12 +3,17 @@ let host = window.location.hostname;
 
 
 let setPageColor = (color) => {
-  let allElements = document.querySelectorAll('*');
-  allElements.forEach(
-    element => {
-      element.style.backgroundColor = color;
+  let styleTag = document.createElement('style');
+  styleTag.classList.add('ekids-chrome-ext');
+  styleTag.innerHTML = `
+    body { 
+      background: ${color} !important;
     }
-  );
+    body * {
+      background: transparent !important; 
+    }
+  `;
+  document.head.append(styleTag);
 };
 
 let saveColorInStorage = (host, color) => {

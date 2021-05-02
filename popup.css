@@ -4,9 +4,11 @@
   color: white;
   border: none;
   border-radius: 6px;
-  font-size: 20px;
+  font-size: 16px;
   cursor: pointer;
   white-space: nowrap;
+  margin-top: 5px;
+  width: 100%;
 }
 
 .btn:hover {
