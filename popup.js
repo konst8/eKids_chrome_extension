@@ -68,8 +68,22 @@ document.addEventListener(
       );
     };
 
+    let addClearButton = () => {
+      let button = document.createElement('button');
+      button.classList.add('btn');
+      button.innerHTML = 'Clear for This Site';
+      document.body.append(button);
+      button.addEventListener(
+        'click',
+        () => {
+          sendColor('');
+        }
+      );
+    };
+
     addHeadings(colors);
     addDelayedColorsButton(colors, 2000);
+    addClearButton();
 
   }
 );

@@ -18,8 +18,13 @@ let saveColorInStorage = (host, color) => {
 chrome.runtime.onMessage.addListener(
   (message) => {
     console.log('message', message);
-    setPageColor(message.color);
-    saveColorInStorage(host, message.color);
+    if (message.color !== '') {
+      setPageColor(message.color);
+      saveColorInStorage(host, message.color);
+    } else {
+      setPageColor('transparent');
+      storage.remove(host);
+    }
   } 
 );
 
