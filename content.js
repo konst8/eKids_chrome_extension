@@ -6,10 +6,19 @@ let setPageColor = (color) => {
   let styleTag = document.createElement('style');
   styleTag.innerHTML = `
     body {
-      background: ${color} !important;
+      color: ${color.text} !important;
+      background-color: ${color.background} !important;
+      border-color: ${color.text} !important;
     }
+    body [class],
     body * {
-      background: transparent !important; 
+      box-shadow: none !important;
+      color: ${color.text} !important;
+      background-color: transparent !important; 
+      border-color: ${color.text} !important;
+    }
+    body img {
+      filter: grayscale(100%);
     }
   `;
   document.head.append(styleTag);

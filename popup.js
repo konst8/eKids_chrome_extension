@@ -18,13 +18,13 @@ document.addEventListener(
 
     let addHeading = (color) => {
       let h3 = document.createElement('h3');
-      h3.innerHTML = color;
-      h3.style.color = color;
+      h3.innerHTML = `${color.text} ${color.background}`;
+      h3.style.color = color.text;
+      h3.style.backgroundColor = color.background;
       h3.style.cursor = 'pointer';
       h3.addEventListener(
         'click',
         event => {
-          let color = event.target.style.color;
           sendColor(color);
         }
       );
@@ -32,11 +32,34 @@ document.addEventListener(
     };
   
     let colors = [
-      '#80808059',
-      'orange',
-      'red',
-      'blue',
-      'green'
+      {
+        text: '#80808059',
+        background: 'purple',
+      },
+      {
+        text: 'orange',
+        background: 'white',
+      },
+      {
+        text: 'red',
+        background: 'pink',
+      },
+      {
+        text: 'blue',
+        background: 'green',
+      },
+      {
+        text: 'green',
+        background: 'brown',
+      },
+      {
+        text: 'white',
+        background: 'gray',
+      },
+      {
+        text: 'gray',
+        background: 'white',
+      },
     ];
 
     let addHeadings = (colors) => {
