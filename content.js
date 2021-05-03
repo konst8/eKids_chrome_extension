@@ -35,11 +35,8 @@ chrome.runtime.onMessage.addListener(
       setPageColor(message.color);
       saveColorInStorage(host, message.color);
     } else {
-      setPageColor({
-        text: 'black',
-        background: 'white',
-      });
       storage.remove(host);
+      window.location.reload();
     }
   } 
 );
