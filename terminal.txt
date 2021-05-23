@@ -26,3 +26,7 @@ git init
 // save initial version of your code
 
 git add --all && git commit -a -m "initial commit"
+
+// show current status of your code
+
+git status
