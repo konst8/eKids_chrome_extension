@@ -35,3 +35,12 @@ git status
 
 git diff
 
+// show histrory of changes (commits)
+
+git log
+
+// clone (download) git repository (folder) from github
+
+git clone <path_to_repository>
+for example:
+git clone https://github.com/konst8/eKids_chrome_extension.git
