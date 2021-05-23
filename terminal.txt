@@ -16,3 +16,13 @@ cd eKids_chrome_extension
 
 ls
 
+
+////// git
+
+// init version control for current folder
+
+git init
+
+// save initial version of your code
+
+git add --all && git commit -a -m "initial commit"
