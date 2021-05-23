@@ -1,0 +1,18 @@
+// show current path
+
+pwd
+
+// go one level up (to parent directory)
+
+cd ..
+
+// go to path
+
+cd <path>
+for example 
+cd eKids_chrome_extension
+
+// list files in current folder
+
+ls
+
